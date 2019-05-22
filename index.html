@@ -83,6 +83,28 @@
     </div>
 </div>
 
+<div id="download-complete-modal" class="modal">
+    <div class="modal-content">
+        <h4>Thank you for downloading Impact!</h4>
+        <p id="mac-moment">
+            On Mac, you may run into the following issue with "Unidentified Developer" on opening the Installer. <a href="https://github.com/ImpactDevelopment/ImpactClient/wiki/Opening-the-installer-on-Mac">Click here</a> for instructions on how to get around this issue.<br />
+            <img src="img/macmoment.png" style="width: 50%">
+        </p>
+        <script type="text/javascript">
+            if (navigator.platform.toUpperCase().indexOf('MAC') == -1) { // if NOT on Mac OS X
+                var elem = document.getElementById("mac-moment"); // then delete the mac info
+
+                elem.parentNode.removeChild(elem);
+            }
+        </script>
+        <p>If you need help with Impact, come <a href="https://discord.gg/YFhR2Ab" target="_blank">join our Discord</a>!</p>
+        <p><a href="https://github.com/ImpactDevelopment/ImpactClient/issues" target="_blank">Report issues</a> on GitHub</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
 <!-- Downloads -->
 <div id="download" class="section scrollspy">
     <div class="container">
@@ -93,7 +115,7 @@
               </div>
             </div>
             <div class="center col s12">
-                <a target="_blank" href="https://github.com/ImpactDevelopment/Installer/releases/download/0.1.0/installer-0.1.0-all.jar">
+                <a target="_blank" href="https://github.com/ImpactDevelopment/Installer/releases/download/0.1.0/installer-0.1.0-all.jar" onclick="jQuery('#download-complete-modal').modal('open');">
                     <div class="card-panel waves-effect z-depth-2 hoverable">
                         <h5 class="black-text">
                             Impact Installer
@@ -226,7 +248,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="collapsible-body" style="display: block;">
+                        <div class="collapsible-body">
                             <div class="collection center-align">
                                 <a class="collection-item default_color_text">
                                     <div>Older versions are unavailable due to compliance with Mojang's EULA</div>
